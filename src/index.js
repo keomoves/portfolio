@@ -4,7 +4,7 @@ import './styles.css'
 import App from './App'
 
 // Message de bienvenue
-console.log("Hello Emraude, je suis Keo, un 3D Designer spécialisé dans Blender ! Je suis dispo pour un entretien ;)\n\nkeomonivong.chou@gmail.com")
+console.log("Hello Emraude, je suis Keo, un Designer 3D spécialisé dans Blender ! Je suis dispo pour un entretien ;)\n\nkeomonivong.chou@gmail.com")
 
 // Create Video Modal Context
 export const VideoModalContext = createContext()
