@@ -1,8 +1,9 @@
 import * as THREE from 'three'
-import { useMemo, useContext, createContext, useRef } from 'react'
+import React, { useMemo, useContext, createContext, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useGLTF, Merged, RenderTexture, PerspectiveCamera, Text } from '@react-three/drei'
 import { SpinningBox } from './SpinningBox'
+import { VideoModalContext } from './index'
 THREE.ColorManagement.legacyMode = false
 
 /*
@@ -201,6 +202,24 @@ function ScreenText({ invert, x = 0, y = 1.2, ...props }) {
 
 /* Renders a monitor with a spinning box */
 function ScreenInteractive(props) {
+  const [isScreenHovered, setIsScreenHovered] = React.useState(false)
+  const { openVideo } = useContext(VideoModalContext)
+
+  const handleScreenPointerOver = (event) => {
+    setIsScreenHovered(true)
+    // event.stopPropagation() // Optionnel : empêche la propagation si nécessaire
+  }
+
+  const handleScreenPointerOut = (event) => {
+    setIsScreenHovered(false)
+    // event.stopPropagation() // Optionnel : empêche la propagation si nécessaire
+  }
+
+  const handleScreenClick = (event) => {
+    event.stopPropagation() // Empêche la propagation pour éviter les conflits avec le cube
+    openVideo('https://www.youtube.com/embed/lw3WAqcI8YI?autoplay=1')
+  }
+
   return (
     <Screen {...props}>
       <PerspectiveCamera makeDefault manual aspect={1 / 1} position={[0, 0, 10]} />
@@ -208,7 +227,23 @@ function ScreenInteractive(props) {
       <ambientLight intensity={Math.PI / 2} />
       <pointLight decay={0} position={[10, 10, 10]} intensity={Math.PI} />
       <pointLight decay={0} position={[-10, -10, -10]} />
-      <SpinningBox position={[-4, 1, -3]} scale={0.7} />
+
+      {/* Zone de détection d'hover et de clic pour tout l'écran */}
+      <mesh
+        position={[0, 0, 0]}
+        onPointerOver={handleScreenPointerOver}
+        onPointerOut={handleScreenPointerOut}
+        onClick={handleScreenClick}
+      >
+        <planeGeometry args={[10, 10]} />
+        <meshBasicMaterial transparent opacity={0} />
+      </mesh>
+
+      <SpinningBox
+        position={[-4, 1, -3]}
+        scale={0.7}
+        globalHover={isScreenHovered}
+      />
       {/* Showreel Text - Always visible */}
       <Text
         position={[-3.15, 0.75, 0]}
