@@ -28,3 +28,7 @@ export function SpinningBox({ scale, videoUrl = 'https://www.youtube.com/embed/l
       onPointerOver={(event) => setLocalHovered(true)}
       onPointerOut={(event) => setLocalHovered(false)}>
       <boxGeometry />
+      <meshStandardMaterial color={isHovered ? 'hotpink' : 'indianred'} />
+    </mesh>
+  )
+}
