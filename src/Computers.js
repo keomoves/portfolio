@@ -208,7 +208,18 @@ function ScreenInteractive(props) {
       <ambientLight intensity={Math.PI / 2} />
       <pointLight decay={0} position={[10, 10, 10]} intensity={Math.PI} />
       <pointLight decay={0} position={[-10, -10, -10]} />
-      <SpinningBox position={[-3.15, 0.75, 0]} scale={0.5} />
+      <SpinningBox position={[-4, 1, -3]} scale={0.7} />
+      {/* Showreel Text - Always visible */}
+      <Text
+        position={[-3.15, 0.75, 0]}
+        fontSize={0.4}
+        color="#000000"
+        anchorX="center"
+        anchorY="middle"
+        font="/Inter-Medium.woff"
+      >
+        Showreel
+      </Text>
     </Screen>
   )
 }
