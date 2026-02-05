@@ -39,6 +39,3 @@ coverage/
 # Temporary folders
 tmp/
 temp/
-
-# Large GLB (exceeds GitHub 100MB; add via Git LFS or deploy manually)
-public/Keo character basemesh posed - colored.glb
