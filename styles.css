@@ -1,0 +1,554 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --light: #fff;
+  --dark: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--light);
+}
+
+.preloader-copy p {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 550;
+}
+
+.preloader-header a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--light);
+  font-family: "Agdasima", sans-serif;
+  font-size: 7.5rem;
+  font-weight: 600;
+  line-height: 0.9;
+  display: block;
+  position: relative;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--dark);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  will-change: clip-path;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background-color: var(--light);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+.preloader-images {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  height: 25rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  will-change: clip-path;
+  overflow: hidden;
+}
+
+.preloader-images .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  will-change: clip-path;
+  overflow: hidden;
+}
+
+.preloader-images .img img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(2);
+  will-change: transform;
+}
+
+.preloader-copy {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  color: #fff;
+}
+
+.preloader-header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(60svh);
+  transform-origin: top;
+  will-change: transform;
+  z-index: 20;
+}
+
+.preloader-header a .char,
+.preloader-copy p .line {
+  position: relative;
+  display: inline-block;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+/* —— LaCrapuleStudio hover page (site-main only) —— */
+
+.site-main {
+  position: relative;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  background-color: #fff;
+}
+
+.site-main h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+}
+
+.site-main p,
+.site-main a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 550;
+  line-height: 1;
+  display: inline-block;
+}
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  mix-blend-mode: difference;
+  z-index: 10;
+  pointer-events: none;
+  font-family: "DM Sans", sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+body.preloader-done .site-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-nav > * {
+  pointer-events: auto;
+}
+
+.site-nav .logo a,
+.site-nav .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 550;
+  line-height: 1;
+  display: inline-block;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.site-main footer {
+  position: fixed;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.site-main footer {
+  bottom: 0;
+}
+
+.site-main .clients {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.site-main .clients-preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50%;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-main .client-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  will-change: clip-path;
+  overflow: hidden;
+}
+
+.site-main .client-img-wrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  will-change: transform, opacity;
+}
+
+.site-main .clients-header p {
+  position: relative;
+  color: #acacac;
+  z-index: 1;
+}
+
+.site-main .clients-list {
+  position: relative;
+  width: 80%;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.site-main .client-name {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.site-main .client-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.15rem;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms ease-out;
+}
+
+.site-main .client-name:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* —— About me page —— */
+
+.about-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  background: #fff;
+  overflow: hidden;
+}
+
+.about-detail[hidden] {
+  display: none !important;
+}
+
+.about-detail__bar {
+  position: fixed;
+  top: auto;
+  bottom: 2.25rem;
+  left: 0;
+  z-index: 11;
+  padding: 0.5rem 2rem;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.about-detail__bar > * {
+  pointer-events: auto;
+}
+
+.about-detail__back {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 550;
+}
+
+.about-detail__canvas {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  padding: 6rem 4rem;
+}
+
+.about-detail__photo {
+  margin: 0;
+  width: 100%;
+  max-width: 34rem;
+  justify-self: end;
+}
+
+.about-detail__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.about-detail__text {
+  max-width: 36rem;
+}
+
+.about-detail__text h2 {
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-detail__text p {
+  color: #111;
+  text-transform: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  max-width: 34rem;
+}
+
+@media (max-width: 1000px) {
+  .preloader-images {
+    top: 35%;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .preloader-copy {
+    width: 80%;
+  }
+
+  .preloader-header {
+    transform: translateY(50svh);
+  }
+
+  .preloader-header a {
+    font-size: 4rem;
+  }
+
+  .site-main h1 {
+    font-size: 2rem;
+  }
+
+  .site-main .clients-preview {
+    width: 100%;
+    height: 100%;
+  }
+
+  .site-main .clients-list {
+    width: 100%;
+  }
+
+  .about-detail__canvas {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 5.25rem 1.25rem 6.5rem;
+    overflow-y: auto;
+  }
+
+  .about-detail__photo {
+    max-width: 18rem;
+    justify-self: center;
+  }
+
+  .about-detail__text {
+    max-width: 100%;
+  }
+
+  .about-detail__text h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .about-detail__text p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+}
+
+/* —— Page projet (grid de toutes les images) —— */
+
+.project-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background: #fff;
+  overflow: hidden;
+}
+
+.project-detail[hidden] {
+  display: none !important;
+}
+
+.project-detail__bar {
+  position: fixed;
+  top: auto;
+  bottom: 2.25rem;
+  left: 0;
+  right: auto;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem 2rem;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.project-detail__bar > * {
+  pointer-events: auto;
+}
+
+.project-detail__back {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 550;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.project-detail__canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 6.5rem 2rem 7rem;
+}
+
+.project-detail__title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.project-detail__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-detail__grid-item {
+  margin: 0;
+  background: #f2f2f2;
+  border-radius: 0.35rem;
+  overflow: hidden;
+}
+
+.project-detail__grid-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  background: #f2f2f2;
+}
+
+@media (max-width: 700px) {
+  .project-detail__bar {
+    bottom: 1.5rem;
+  }
+
+  .project-detail__canvas {
+    padding: 6rem 1rem 6rem;
+  }
+
+  .project-detail__title {
+    margin-bottom: 1rem;
+  }
+
+  .project-detail__grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}

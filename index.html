@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keo Chou</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="progress-bar"></div>
+
+      <div class="preloader-images">
+        <div class="img"><img src="/Proj4-8-thumbnail.png" alt="" /></div>
+        <div class="img"><img src="/Proj1-4-thumbnail.png" alt="" /></div>
+        <div class="img"><img src="/Proj3-2-thumbnail.png" alt="" /></div>
+        <div class="img"><img src="/4.png" alt="" /></div>
+      </div>
+
+      <div class="preloader-copy">
+        <p>
+          A French 3D stylist crafting tactile worlds where light, fabric, and volume tell a sharper story.
+        </p>
+      </div>
+    </div>
+
+    <div class="preloader-header">
+      <a href="#">Keo Chou</a>
+    </div>
+
+    <nav class="site-nav" aria-label="Principal">
+      <div class="logo">
+        <a href="#" id="home-link">Keo Chou</a>
+      </div>
+
+      <div class="nav-links">
+        <a href="#" id="home-link-nav">Home</a>
+        <a href="#" id="about-link">About Me</a>
+      </div>
+    </nav>
+
+    <main class="site-main">
+      <section class="clients">
+        <div class="clients-preview"></div>
+
+        <div class="clients-header">
+          <p>Projects</p>
+        </div>
+
+        <div class="clients-list">
+          <div class="client-name" data-client-index="0" role="link" tabindex="0">
+            <h1>Futuristic,</h1>
+          </div>
+          <div class="client-name" data-client-index="1" role="link" tabindex="0">
+            <h1>Streetwear,</h1>
+          </div>
+          <div class="client-name" data-client-index="2" role="link" tabindex="0">
+            <h1>Backpack,</h1>
+          </div>
+          <div class="client-name" data-client-index="3" role="link" tabindex="0">
+            <h1>Matrix,</h1>
+          </div>
+          <div class="client-name" data-client-index="4" role="link" tabindex="0">
+            <h1>Dress,</h1>
+          </div>
+          <div class="client-name" data-client-index="5" role="link" tabindex="0">
+            <h1>Oversize,</h1>
+          </div>
+          <div class="client-name" data-client-index="6" role="link" tabindex="0">
+            <h1>Sci-fi</h1>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>3D stylist</p>
+        <a href="mailto:keomonivong.chou@gmail.com">keomonivong.chou@gmail.com</a>
+      </footer>
+    </main>
+
+    <section class="about-detail" id="about-detail" aria-hidden="true" hidden>
+      <header class="about-detail__bar">
+        <button type="button" class="about-detail__back">← Home</button>
+      </header>
+
+      <div class="about-detail__canvas">
+        <figure class="about-detail__photo">
+          <img src="/4.png" alt="Keo Chou portrait" width="900" height="1200" />
+        </figure>
+        <div class="about-detail__text">
+          <h2>About me</h2>
+          <p>
+            I am Keo Chou, a 24-year-old French 3D stylist. I love sewing and
+            building silhouettes by hand, and I made the transition from real
+            craftsmanship to digital creation to shape tactile fashion worlds in
+            3D.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-detail"
+      id="project-detail"
+      aria-hidden="true"
+      hidden
+    >
+      <header class="project-detail__bar">
+        <button type="button" class="project-detail__back">
+          ← Projects
+        </button>
+      </header>
+
+      <div class="project-detail__canvas">
+        <h2 class="project-detail__title"></h2>
+        <div class="project-detail__grid" role="list"></div>
+      </div>
+    </section>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
